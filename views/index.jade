@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Lista de tweets
+  p ¡Bienvenido a la lista de tweets con #WebDev @Uniandes!
+  .tweets-container
+    each t, i in tweets
+      .tweet
+        img.tweet_profile_pic(src=t.user.profile_image_url, alt='Profile pic')
+        .tweet_text
+          | #{t.text}
+        .tweet_name #{t.user.name}
+        .tweet_date #{t.created_at}
+
